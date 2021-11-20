@@ -4,7 +4,8 @@ import axios from "axios"
 import { useHistory } from "react-router-dom";
 
 
-const CategoriesComponent = ({classes}) => {
+
+const CategoriesComponent = () => {
    
      const history = useHistory()
     const [Categories,setCategories] = useState([])
@@ -29,13 +30,20 @@ const CategoriesComponent = ({classes}) => {
        
     }
     return (
-        <div style={{background : "white"}}>
+        <div style={{ 
+            display:"inlineFlex", 
+            position: "sticky",
+            top: 0.5,
+            marginBottom : 30,
+            background : "white"}}>
             <Grid  xs={12}  container spacing={2} >   
                 {Categories && Categories.map((category,index)=>{
                     return(
-                        <Grid item key={category[index]} xs={12} sm={6} md={3}  spacing={2}> 
-                        <Button style={{color : "#484848",padding:"10px"}} onClick={()=>handleCategory(category)}>{category}</Button>  
-                        </Grid>
+                        <div style={{
+                            marginLeft : "20px",                  
+                            }}>
+                             <Button style={{color : "#484848",padding:"10px"}} onClick={()=>handleCategory(category)}>{category}</Button>  
+                        </div>     
                     )}
                 )}   
             </Grid>  

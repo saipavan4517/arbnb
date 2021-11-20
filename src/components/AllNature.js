@@ -12,27 +12,20 @@ const useStyles = makeStyles({
 });
 
 
-
 const AllNature = () => {
-   
 
     const classes = useStyles()
 
     const [products,setProducts] = useState([])
-
-   
 
     const getProducts = async() => {
       const {data} =await  axios.get(`https://fakestoreapi.com/products`)
       setProducts(data)
    }
 
-  
  
-//  
 
    useEffect(()=> getProducts(),[])
-
 
     return (
         <>  
@@ -42,6 +35,7 @@ const AllNature = () => {
                         bgcolor: 'background.paper',
                         pt: 8,
                         pb: 6,
+                        pl:7,
                         
                     }}
                  >

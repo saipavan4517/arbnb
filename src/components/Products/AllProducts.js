@@ -12,10 +12,8 @@ const AllProducts = (props) => {
         <Grid  sx={{ flexGrow: 1 }} container >
           {
               allProducts && allProducts.map((product)=>{
-                  return(
-                       
-                       <Products product={product} classes={classes}/>  
-                            
+                  return(          
+                       <Products product={product} classes={classes}/>               
                   )
 
               })

@@ -6,7 +6,6 @@ import {Card} from "@mui/material"
 const useStyles = makeStyles({
   
     image : {
-     
       objectFit : "fill"
     },
     Card :{
@@ -24,11 +23,14 @@ const ProductInfo = () => {
 
     const productInfo = location?.state
     return (
-        <div>
+        <div> 
+            <div>
+                
               <Card style={{ borderRadius : "5%"} } className={classes.Card}>
-                    <img src={productInfo?.image} style={{  height : "300px",width : "270px",}}/>
-                    <h2>{productInfo?.title}</h2> 
+                    <img src={productInfo?.image} style={{  height : "300px",width : "270px",}}/>             
             </Card>
+            </div>
+            <h2>{productInfo?.title}</h2> 
             
         </div>
     )

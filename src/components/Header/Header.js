@@ -5,19 +5,18 @@ import { Link } from 'react-router-dom';
 import CategoriesComponent from './Categories/Categories';
 
 const useStyles = makeStyles({
+   
+    categories :{
 
-    stickyHeader: {
-        position: "sticky",
-        top: 0.5,
-        height : 70,
-    },
+        width :"100%",
+    }
   
 })
 
 const Header = () => {
     const classes = useStyles()
     return (
-        <div>
+        <div className={classes.categories}>
             <AppBar position="static">
                 <Toolbar style={{background : "white"}} >
                       <Link to={"/"} style={{textDecoration: "none"}}>
@@ -26,7 +25,7 @@ const Header = () => {
                 </Toolbar>
             </AppBar> 
             <br />
-            <CategoriesComponent className={classes.stickyHeader}/> 
+            <CategoriesComponent /> 
         </div>
     )
 }
