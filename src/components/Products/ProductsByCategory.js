@@ -1,11 +1,32 @@
 import React from 'react'
+import {Card, Grid,Container} from "@mui/material"
+import Productitem from './Products'
+import { useLocation } from "react-router-dom";
 
-const ProductsByCategory = () => {
+
+
+
+const ProductsByCategoryComponent = (props) => {
+    const location = useLocation();
+
+    console.log("dataererer ",location.state)
+    const {classes} =props
+    
     return (
-        <div>
+        <Container>
+            <Grid  container spacing={2}>                      
+                {
+                   location.state &&  location.state.map((product)=>{
+                        return (
+                            <Productitem product={product} classes={classes}/>
+                        )
+
+                    })
+                }
+            </Grid>
+        </Container>
             
-        </div>
     )
 }
 
-export default ProductsByCategory
+export default ProductsByCategoryComponent

@@ -1,11 +1,12 @@
 import './App.css';
-import AllNature from "./components/AllNature"
+import Routes from './Route';
+
 
 function App(){
   return (
-    <div className="App">
-      <AllNature />
-    </div>
+      <div className="App">
+        <Routes />
+      </div>
   );
 }
 
